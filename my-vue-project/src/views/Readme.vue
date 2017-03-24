@@ -26,6 +26,11 @@
           <br> bootstrap
         </p>
       </blockquote>
+      <blockquote>
+        <p>项目使用的ajax请求
+          <br> axios
+        </p>
+      </blockquote>
     </div>
   </div>
 </template>
