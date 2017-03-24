@@ -58,9 +58,12 @@
   .sidebar ul li a{
     color: #fff;
   }
+  .sidebar ul li a:focus{
+    text-decoration: none;
+  }
   .sidebar ul li{
-    height: 40px;
-    line-height: 40px;
+    height: 50px;
+    line-height: 50px;
     text-align: center;
     cursor: pointer;
     transition: background-color .3s linear;
