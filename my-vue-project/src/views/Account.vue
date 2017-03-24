@@ -3,26 +3,46 @@
     <div class="about">
       <div class="panel panel-success">
         <div class="panel-heading">
-          <h4 class="panel-title">个人账户</h4>
+          <h4 class="panel-title text-left">个人账户</h4>
         </div>
         <div class="panel-body">
-          <span v-text="msg" v-on:click="tips"></span>
           <div>
-            <p v-for="item in list" >
-              <span>{{item.name}}</span>
-              <span>{{item.age}}</span>
-              <span>{{item.sex}}</span>
-            </p>
+            <h4 v-text="msg" v-on:click="tips" class="text-left"></h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>姓名</th>
+                  <th>年龄</th>
+                  <th>性别</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="item in list" >
+                  <td align="left">{{item.name}}</td>
+                  <td align="left">{{item.age}}</td>
+                  <td align="left">{{item.sex}}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <input type="number" v-model.number="age">
-          <span @click="getUserInfo" class="clk">点击得到用户信息</span>
           <div>
-            <p @click="getUsers">这里是用户信息</p>
-            <p v-for="user in users">
-              <span>用 户 id：{{user.uid}}</span>
-              <span>用户姓名：{{user.name}}</span>
-              <span>用户邮箱：{{user.email}}</span>
-            </p>
+            <h4 class="text-left">动态数据</h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>用户id</th>
+                  <th>用户姓名</th>
+                  <th>用户邮箱</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="user in users">
+                  <td align="left">{{user.uid}}</td>
+                  <td align="left">{{user.name}}</td>
+                  <td align="left">{{user.email}}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
         <div class="panel-footer"><span v-if="seen">如果为true你可以看到我</span>面板脚部位</div>
@@ -36,7 +56,7 @@
   export default {
     data () {
       return {
-        msg: '这里是个人账户信息',
+        msg: '固定数据',
         seen: false,
         toggle: 'a',
         age: '你好',

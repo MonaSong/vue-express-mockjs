@@ -7,9 +7,11 @@
       <br>
       <br>
       <br>
-       <button @click="show = !show">
-          Toggle render
-      </button>
+      <p class="text-left">
+        <button @click="show = !show" class="btn btn-primary">
+            点击切换状态
+        </button>
+      </p>
       <transition name="slide-fade">
         <div class="test-box test-box-blue" v-if="show"></div>
       </transition >

@@ -25,6 +25,9 @@ ul, menu, dir {
   padding-right: 20px;
   overflow: hidden;
 }
+.text-left{
+  text-align: left;
+}
 /*显示隐藏*/
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s

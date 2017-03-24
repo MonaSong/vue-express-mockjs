@@ -2,7 +2,7 @@
     <div class="sidebar">
         <!--<span v-text="myMessage"></span>-->
         <div class="user-info">
-          <span></span>
+          <span><img src="../../../static/images/woman-user.png" alt=""></span>
         </div>
         <div class="sidebar-container">
           <ul>
@@ -34,7 +34,7 @@
     top: 0;
     width: 220px;
     min-height: 100%;
-    background-color: #eaeaea;
+    background-color: #27363e;
   }
   .sidebar-container{
     margin-top: 50px;
@@ -42,27 +42,32 @@
   .sidebar ul{
     margin-left: 0;
   }
+  .sidebar ul li a{
+    color: #fff;
+  }
   .sidebar ul li{
     height: 40px;
     line-height: 40px;
-    background-color: #fafafa;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid rgba(255,255,255,.2);
     cursor: pointer;
     transition: background-color .3s linear;
   }
   .sidebar ul li:hover{
-    background-color: #eee;
+    background-color: #000;
   }
   .user-info {
     background-color: #428bca;
-    padding-top: 3px;
-    padding-bottom: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
   .user-info span{
     display: inline-block;
     height: 60px;
     width: 60px;
-    background-color: #eaeaea;
     border-radius: 100%;
+  }
+  .user-info span img{
+    width: 60px;
+    height: 60px;
   }
 </style>
