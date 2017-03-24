@@ -9,6 +9,6 @@ vue-cli and express-mockjs build front-end
 
 ### start mock server
 `npm run api` or `node api-interface/app.js`
-
-#### once following  interface appears
+####click 
+#### you are success once following  interface appears
 ![image](https://github.com/MonaSong/vue-express-mockjs/blob/master/my-vue-project/images/mock-server.png)
