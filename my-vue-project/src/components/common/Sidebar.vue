@@ -6,11 +6,10 @@
         </div>
         <div class="sidebar-container">
           <ul>
-            <li><span><router-link to="/readme">前言</router-link></span></li>
-            <li><span><router-link to="/readme/about">关于</router-link></span></li>
-            <li><span><router-link to="/readme/account">账户</router-link></span></li>
-            <li><router-link to="/readme/animate">动画</router-link></li>
-            <li><a href="javascript:void(0)">菜单5</a></li>
+            <li :class="{active:(onRoutes === 'readme')}"><span><router-link to="/readme">前言</router-link></span></li>
+            <li :class="{active:(onRoutes === 'about')}"><span><router-link to="/readme/about">关于</router-link></span></li>
+            <li :class="{active:(onRoutes === 'account')}"><span><router-link to="/readme/account">账户</router-link></span></li>
+            <li :class="{active:(onRoutes === 'animate')}"><router-link to="/readme/animate">动画</router-link></li>
           </ul>
         </div>
     </div>
@@ -23,7 +22,21 @@
         name: 'sidebar'
       }
     },
-    props: ['myMessage']
+    props: ['myMessage'],
+    computed: {
+      onRoutes () {
+        let curRoute = this.$route.path
+        let firstOne = curRoute.indexOf('/')
+        let lastOne = curRoute.lastIndexOf('/')
+        let curPath = ''
+        if (firstOne === lastOne && firstOne !== -1) {
+          curPath = curRoute.replace('/', '')
+        } else {
+          curPath = curRoute.substring(lastOne + 1, curRoute.length)
+        }
+        return curPath
+      }
+    }
   }
 </script>
 
@@ -53,6 +66,9 @@
     transition: background-color .3s linear;
   }
   .sidebar ul li:hover{
+    background-color: #000;
+  }
+  .sidebar ul li.active{
     background-color: #000;
   }
   .user-info {
