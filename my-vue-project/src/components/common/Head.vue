@@ -3,13 +3,17 @@
       <div class="head-container">
         <div class="pull-right head-right">
           <!--<span v-text="myMessage"></span>-->
-          <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span>你好：</span><b>{{username}}</b> <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a  @click.prevent="out">退出</a></li>
-            </ul>
+          <div>
+            <div class="drop-title" :class="{active:show}">
+              <p @click="show =!show"><span>您好：</span><b>{{username}}</b><i class="caret"></i></p>
+            </div>
+            <transition name="fade" mode="out-in">
+              <div class="drop-down-info" v-if="show">
+                <ul>
+                  <li  @click.prevent="out">退出</li>
+                </ul>
+              </div>
+            </transition>
           </div>
         </div>
       </div>
@@ -21,7 +25,8 @@ export default {
   data () {
     return {
       name: 'lucy',
-      username: localStorage['u_name']
+      username: localStorage['u_name'],
+      show: false
     }
   },
   props: ['myMessage'],
@@ -40,21 +45,38 @@ export default {
     left: 0;
     height: 70px;
     width: 100%;
-    background-color: #fafafa;
+    background-color: #00acac;
   }
   .head-right{
-    margin-right: 80px;
+    margin-right: 50px;
   }
-  .btn{
-    margin-top: 20px;
-    border: 0;
-  }
-  .btn.btn-default:hover,
-  .btn.btn-default:focus,
-  .btn.btn-default:active{
+  .drop-down-info{
+    margin-top: -10px;
+    border: 1px solid #fafafa;
     background-color: #fff;
   }
-  .btn-group ul li a{
+  .drop-down-info ul li{
+    height: 40px;
+    line-height:40px;
+    padding: 0;
+    list-style: none;
+    margin-left: 0;
     cursor: pointer;
+    transition:background-color .2s linear;
   }
+  .drop-down-info ul li:hover{
+    background-color: #fafafa;
+  }
+  .drop-title{
+    padding-left:15px;
+    padding-right: 15px;
+    cursor: pointer;
+    background-color: #00acac;
+    line-height: 70px;
+    color: #fff;
+  }
+  .drop-title:hover,.drop-title.active{
+    background-color: #008a8a;
+  }
+  
 </style>

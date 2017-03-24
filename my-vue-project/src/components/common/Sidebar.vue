@@ -34,7 +34,7 @@
     top: 0;
     width: 220px;
     min-height: 100%;
-    background-color: #27363e;
+    background-color: #2d353c;
   }
   .sidebar-container{
     margin-top: 50px;
@@ -48,7 +48,6 @@
   .sidebar ul li{
     height: 40px;
     line-height: 40px;
-    border-bottom: 1px solid rgba(255,255,255,.2);
     cursor: pointer;
     transition: background-color .3s linear;
   }
@@ -56,9 +55,10 @@
     background-color: #000;
   }
   .user-info {
-    background-color: #428bca;
-    padding-top: 5px;
+    height: 150px;
+    padding-top: 30px;
     padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255,255,255,.2)
   }
   .user-info span{
     display: inline-block;

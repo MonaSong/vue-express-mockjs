@@ -4,22 +4,28 @@
             <div class="login-title">
                 <h4>{{msg}} </h4>
             </div>
-            <form class="form-horizontal clearfix" >
-                  <div class="form-group">
-                    <label for="" class="col-xs-3">用户名称：</label>
-                    <div class="col-xs-9">
-                          <input type="text" class="form-control" id="" placeholder="name">
+            <div class="login-box-container">
+              <form class="form-horizontal clearfix" >
+                    <div class="form-group">
+                      <label for="" class="col-xs-3">用户名称：</label>
+                      <div class="col-xs-9">
+                            <input type="text" class="form-control" id="" placeholder="name">
+                      </div>
+                      
                     </div>
-                    
-                  </div>
-                  <div class="form-group">
-                    <label for="" class="col-xs-3">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
-                    <div class="col-xs-9">
-                          <input type="password" class="form-control" id="" placeholder="password">
+                    <div class="form-group">
+                      <label for="" class="col-xs-3">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                      <div class="col-xs-9">
+                            <input type="password" class="form-control" id="" placeholder="password">
+                      </div>
                     </div>
-                  </div>
-                  <span  class="btn btn-primary" @click="submitRuleForm">提交</span>
-            </form>
+                    <div class="form-group">
+                        <div class="col-xs-9 col-xs-offset-3 text-left">
+                            <span  class="btn btn-primary login" @click="submitRuleForm">提交</span>
+                        </div>
+                    </div>                  
+              </form>
+            </div>
        </div>
   </div>
 </template>
@@ -50,15 +56,55 @@ export default {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #428bca;
+        background-color: #eaeaea;
       }
      .login-box{
          width:500px;
          height: 300px;
-         padding:15px;
          margin: 100px auto auto auto;
-         background-color: rgba(255,245,235,.6);
-         border-radius: 5px;
+         background-color: #fff;
      }
-
+     .login-box input{
+       height: 40px;
+       background-color: #fff;
+       border-radius: 2px;
+     }
+     .login-title{
+        height: 40px;
+        background-color: #00acac;
+        margin-bottom: 30px;
+     }
+     .login-title h4{
+       padding-left: 30px;
+       text-align: left;
+       padding-top: 10px;
+       color: #fff;
+     }
+     .login-box-container{
+       padding: 20px;
+     }
+      .login{
+        background-color: #00acac;
+        border-color: #00acac;
+        width: 100px;
+        height: 40px;
+        line-height: 25px;
+        border-radius: 2px;
+        transition: background-color .2s linear;
+      }
+      .login:hover{
+       background-color: #008a8a;
+      }
+      .from-group label{
+       font-size: 16px;
+       font-weight: normal;
+       color: #999;
+      }
+      input:-webkit-autofill, 
+      textarea:-webkit-autofill, 
+      select:-webkit-autofill {
+          background-color: rgb(2555, 255, 255);
+          background-image: none;
+          color: rgb(0, 0, 0);
+      }
 </style>
