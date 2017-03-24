@@ -1,6 +1,9 @@
 <template>
     <div class="head">
       <div class="head-container">
+        <div class="pull-left head-left">
+          <h3>{{systemname}}</h3>
+        </div>
         <div class="pull-right head-right">
           <!--<span v-text="myMessage"></span>-->
           <div>
@@ -24,6 +27,7 @@
 export default {
   data () {
     return {
+      systemname: '后台管理系统',
       name: 'lucy',
       username: localStorage['u_name'],
       show: false
@@ -46,6 +50,13 @@ export default {
     height: 70px;
     width: 100%;
     background-color: #00acac;
+  }
+  .head-container{
+    padding-left: 250px;
+  }
+  .head-container h3{
+    margin-top: 20px;
+    color: #fff;
   }
   .head-right{
     margin-right: 50px;
