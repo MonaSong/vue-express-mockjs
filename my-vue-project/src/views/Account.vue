@@ -26,7 +26,7 @@
             </table>
           </div>
           <div>
-            <h4 class="text-left">动态数据</h4>
+            <h4 class="text-left">这里的数据是从mock服务器上面拿到的动态数据</h4>
             <table class="table">
               <thead>
                 <tr>
@@ -45,7 +45,6 @@
             </table>
           </div>
         </div>
-        <div class="panel-footer"><span v-if="seen">如果为true你可以看到我</span>面板脚部位</div>
       </div>
     </div>
   </div>
@@ -57,7 +56,6 @@
     data () {
       return {
         msg: '固定数据',
-        seen: false,
         toggle: 'a',
         age: '你好',
         list: [

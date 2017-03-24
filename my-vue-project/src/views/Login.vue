@@ -7,20 +7,18 @@
             <div class="login-box-container">
               <form class="form-horizontal clearfix" >
                     <div class="form-group">
-                      <label for="" class="col-xs-3">用户名称：</label>
-                      <div class="col-xs-9">
-                            <input type="text" class="form-control" id="" placeholder="name">
+                      <div class="col-xs-12">
+                            <input type="text" class="form-control" id="" placeholder="用户名">
                       </div>
                       
                     </div>
                     <div class="form-group">
-                      <label for="" class="col-xs-3">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
-                      <div class="col-xs-9">
-                            <input type="password" class="form-control" id="" placeholder="password">
+                      <div class="col-xs-12">
+                            <input type="password" class="form-control" id="" placeholder="密码">
                       </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-xs-9 col-xs-offset-3 text-left">
+                        <div class="col-xs-12 text-left">
                             <span  class="btn btn-primary login" @click="submitRuleForm">提交</span>
                         </div>
                     </div>                  
@@ -58,35 +56,38 @@ export default {
         bottom: 0;
         background-color: #eaeaea;
       }
-     .login-box{
+      .login-box{
          width:500px;
          height: 300px;
          margin: 100px auto auto auto;
          background-color: #fff;
-     }
-     .login-box input{
+      }
+      .login-box input{
        height: 40px;
        background-color: #fff;
        border-radius: 2px;
-     }
-     .login-title{
+      }
+      .login-title{
         height: 40px;
         background-color: #00acac;
         margin-bottom: 30px;
-     }
-     .login-title h4{
+      }
+      .login-title h4{
        padding-left: 30px;
        text-align: left;
        padding-top: 10px;
        color: #fff;
-     }
-     .login-box-container{
-       padding: 20px;
-     }
+      }
+      .login-box-container input,
+      .login-box-container .login{
+        display: block;
+      }
+      .login-box-container{
+       padding: 20px 60px 20px 60px;
+      }
       .login{
         background-color: #00acac;
         border-color: #00acac;
-        width: 100px;
         height: 40px;
         line-height: 25px;
         border-radius: 2px;

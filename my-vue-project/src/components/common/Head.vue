@@ -69,6 +69,7 @@ export default {
   .drop-down-info ul li{
     height: 40px;
     line-height:40px;
+    text-align: center;
     padding: 0;
     list-style: none;
     margin-left: 0;
@@ -89,5 +90,4 @@ export default {
   .drop-title:hover,.drop-title.active{
     background-color: #008a8a;
   }
-  
 </style>

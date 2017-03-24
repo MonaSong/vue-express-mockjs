@@ -48,6 +48,7 @@
   .sidebar ul li{
     height: 40px;
     line-height: 40px;
+    text-align: center;
     cursor: pointer;
     transition: background-color .3s linear;
   }
@@ -56,6 +57,7 @@
   }
   .user-info {
     height: 150px;
+    text-align: center;
     padding-top: 30px;
     padding-bottom: 5px;
     border-bottom: 1px solid rgba(255,255,255,.2)
