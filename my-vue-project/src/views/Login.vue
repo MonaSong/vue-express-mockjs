@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-xs-12 text-left">
-                            <span  class="btn btn-primary login" @click="submitRuleForm">提交</span>
+                            <span  class="btn btn-primary login" @click="submitRuleForm">登录</span>
                         </div>
                     </div>                  
               </form>
