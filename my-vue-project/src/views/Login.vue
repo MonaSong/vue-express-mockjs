@@ -47,37 +47,45 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
+      @white:#fff;
+      @green-blue:#00acac;
+      @green-blue-hover:#008a8a;
+      @bg-color:#eaeaea;
+      @light-dark: #999;
+
       .login-container{
         position: fixed;
         top:0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #eaeaea;
+        background-color: @bg-color;
       }
       .login-box{
          width:500px;
          height: 300px;
          margin: 100px auto auto auto;
-         background-color: #fff;
+         background-color: @white;
+         input{
+          height: 40px;
+          background-color: @white;
+          border-radius: 2px;
+        }
       }
-      .login-box input{
-       height: 40px;
-       background-color: #fff;
-       border-radius: 2px;
-      }
+
       .login-title{
         height: 40px;
-        background-color: #00acac;
+        background-color: @green-blue;
         margin-bottom: 30px;
+        h4{
+          padding-left: 30px;
+          text-align: left;
+          padding-top: 10px;
+          color: @white;
+        }
       }
-      .login-title h4{
-       padding-left: 30px;
-       text-align: left;
-       padding-top: 10px;
-       color: #fff;
-      }
+      
       .login-box-container input,
       .login-box-container .login{
         display: block;
@@ -86,20 +94,21 @@ export default {
        padding: 20px 60px 20px 60px;
       }
       .login{
-        background-color: #00acac;
-        border-color: #00acac;
+        background-color: @green-blue;
+        border-color: @green-blue;
         height: 40px;
         line-height: 25px;
         border-radius: 2px;
         transition: background-color .2s linear;
+        &:hover{
+          background-color: @green-blue-hover;
+        }
       }
-      .login:hover{
-       background-color: #008a8a;
-      }
+
       .from-group label{
        font-size: 16px;
        font-weight: normal;
-       color: #999;
+       color: @light-dark;
       }
       input:-webkit-autofill, 
       textarea:-webkit-autofill, 

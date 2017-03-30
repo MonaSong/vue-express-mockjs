@@ -62,7 +62,7 @@ export default {
     margin-right: 50px;
   }
   .drop-down-info{
-    margin-top: -10px;
+    margin-top: 0;
     border: 1px solid #fafafa;
     background-color: #fff;
   }
@@ -85,6 +85,7 @@ export default {
     cursor: pointer;
     background-color: #00acac;
     line-height: 70px;
+    height: 70px;
     color: #fff;
   }
   .drop-title:hover,.drop-title.active{
