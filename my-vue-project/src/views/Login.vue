@@ -8,13 +8,13 @@
               <form class="form-horizontal clearfix" >
                     <div class="form-group">
                       <div class="col-xs-12">
-                            <input type="text" class="form-control" id="" placeholder="用户名">
+                            <input type="text" class="form-control" id="" placeholder="用户名" v-model="user_name" required>
                       </div>
                       
                     </div>
                     <div class="form-group">
                       <div class="col-xs-12">
-                            <input type="password" class="form-control" id="" placeholder="密码">
+                            <input type="password" class="form-control" id="" placeholder="密码" v-model="password" required>
                       </div>
                     </div>
                     <div class="form-group">
@@ -33,13 +33,18 @@ export default {
   name: 'login',
   data () {
     return {
-      msg: '欢迎登陆'
+      msg: '欢迎登陆',
+      user_name: '',
+      password: ''
     }
   },
   methods: {
     submitRuleForm () {
       const self = this
-      localStorage['u_name'] = 'mona'
+      if (self.user_name === '' || self.password === '') {
+        return ''
+      }
+      localStorage['u_name'] = self.user_name
       self.$router.push('/readme')
     }
   }
@@ -88,12 +93,11 @@ export default {
         }
       }
       
-      .login-box-container input,
-      .login-box-container .login{
-        display: block;
-      }
       .login-box-container{
-       padding: 20px 60px 20px 60px;
+        padding: 20px 60px 20px 60px;
+        input, .login{
+        display: block;
+       }
       }
       .login{
         background-color: @green-blue;
