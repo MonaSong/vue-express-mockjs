@@ -40,7 +40,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
   .sidebar{
     position: fixed;
     left: 0;
@@ -54,41 +54,44 @@
   }
   .sidebar ul{
     margin-left: 0;
+    li{
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color .3s linear;
+      &:hover{
+        background-color: #000;
+      }
+      &.active{
+        background-color: #000;
+      }
+      a{
+        color: #fff;
+        &:focus{
+          text-decoration: none;
+        }
+      }
+      
+    }
   }
-  .sidebar ul li a{
-    color: #fff;
-  }
-  .sidebar ul li a:focus{
-    text-decoration: none;
-  }
-  .sidebar ul li{
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color .3s linear;
-  }
-  .sidebar ul li:hover{
-    background-color: #000;
-  }
-  .sidebar ul li.active{
-    background-color: #000;
-  }
+ 
   .user-info {
     height: 150px;
     text-align: center;
     padding-top: 30px;
     padding-bottom: 5px;
-    border-bottom: 1px solid rgba(255,255,255,.2)
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    span{
+      display: inline-block;
+      height: 60px;
+      width: 60px;
+      border-radius: 100%;
+      img{
+        width: 60px;
+        height: 60px;
+      }
+    }
   }
-  .user-info span{
-    display: inline-block;
-    height: 60px;
-    width: 60px;
-    border-radius: 100%;
-  }
-  .user-info span img{
-    width: 60px;
-    height: 60px;
-  }
+
 </style>

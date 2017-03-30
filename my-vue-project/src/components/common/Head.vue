@@ -19,7 +19,7 @@
             </transition>
           </div>
         </div>
-      </div>
+      </div>          
     </div>
 </template>
 
@@ -42,7 +42,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less" scoped>
   .head{
     position: absolute;
     top: 0;
@@ -53,32 +53,35 @@ export default {
   }
   .head-container{
     padding-left: 250px;
+     h3{
+      margin-top: 20px;
+      color: #fff;
+     }
   }
-  .head-container h3{
-    margin-top: 20px;
-    color: #fff;
-  }
+
   .head-right{
     margin-right: 50px;
   }
+
   .drop-down-info{
     margin-top: 0;
     border: 1px solid #fafafa;
     background-color: #fff;
+    ul li{
+      height: 40px;
+      line-height:40px;
+      text-align: center;
+      padding: 0;
+      list-style: none;
+      margin-left: 0;
+      cursor: pointer;
+      transition:background-color .2s linear;
+        &:hover{
+          background-color: #fafafa;
+        }
+    }
   }
-  .drop-down-info ul li{
-    height: 40px;
-    line-height:40px;
-    text-align: center;
-    padding: 0;
-    list-style: none;
-    margin-left: 0;
-    cursor: pointer;
-    transition:background-color .2s linear;
-  }
-  .drop-down-info ul li:hover{
-    background-color: #fafafa;
-  }
+ 
   .drop-title{
     padding-left:15px;
     padding-right: 15px;
@@ -87,8 +90,9 @@ export default {
     line-height: 70px;
     height: 70px;
     color: #fff;
-  }
-  .drop-title:hover,.drop-title.active{
-    background-color: #008a8a;
+    &:hover,
+    &.active{
+      background-color: #008a8a;
+    }
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class= "container-box">
+  <div class="container-box">
     <div class="about">
       <div class="panel panel-success">
         <div class="panel-heading">
@@ -7,7 +7,9 @@
         </div>
         <div class="panel-body">
           <div>
-            <h4 v-text="msg" v-on:click="tips" class="text-left"></h4>
+            <h4 v-text="msg"
+                v-on:click="tips"
+                class="text-left"></h4>
             <table class="table">
               <thead>
                 <tr>
@@ -17,7 +19,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="item in list" >
+                <tr v-for="item in list">
                   <td align="left">{{item.name}}</td>
                   <td align="left">{{item.age}}</td>
                   <td align="left">{{item.sex}}</td>
@@ -48,81 +50,83 @@
       </div>
     </div>
   </div>
-    
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        msg: '固定数据',
-        toggle: 'a',
-        age: '你好',
-        list: [
-          { name: 'lucy',
-            age: '23',
-            sex: '女'
-          },
-          { name: '张三',
-            age: '30',
-            sex: '男'
-          },
-          { name: 'lily',
-            age: '25',
-            sex: '女'
-          }
-        ],
-        user: null,
-        users: null
-      }
+export default {
+  data() {
+    return {
+      msg: '固定数据',
+      toggle: 'a',
+      age: '你好',
+      list: [
+        {
+          name: 'lucy',
+          age: '23',
+          sex: '女'
+        },
+        {
+          name: '张三',
+          age: '30',
+          sex: '男'
+        },
+        {
+          name: 'lily',
+          age: '25',
+          sex: '女'
+        }
+      ],
+      user: null,
+      users: null
+    }
+  },
+  created: function () {
+    let seft = this
+    this.getUsers(function (data) {
+      seft.users = data
+    })
+  },
+  methods: {
+    tips() {
+      let self = this
+      self.msg = '你点了我一下'
+      setTimeout(function () {
+        self.msg = '这里是个人账户信息'
+      }, 1000)
     },
-    created: function () {
-      let seft = this
-      this.getUsers(function (data) {
-        seft.users = data
+    getUserInfo() {
+      //  let contextPath = 'http://localhost:8090'
+      this.$ajax({
+        method: 'get',
+        url: '/api/user',
+        params: {
+          uid: 233
+        }
+      }).then(function (res) {
+        console.info(res)
+      }).catch(function (err) {
+        console.info(err)
       })
     },
-    methods: {
-      tips () {
-        let self = this
-        self.msg = '你点了我一下'
-        setTimeout(function () {
-          self.msg = '这里是个人账户信息'
-        }, 1000)
-      },
-      getUserInfo () {
-        //  let contextPath = 'http://localhost:8090'
-        this.$ajax({
-          method: 'get',
-          url: '/api/user',
-          params: {
-            uid: 233
-          }
-        }).then(function (res) {
-          console.info(res)
-        }).catch(function (err) {
-          console.info(err)
-        })
-      },
-      getUsers (callback) {
-        let curUsers = null
-        this.$ajax({
-          method: 'get',
-          url: '/api/test-demo'
-        }).then(function (res) {
-          curUsers = res.data.result
-          callback(curUsers)
-        }).catch(function (err) {
-          console.info(err)
-        })
-      }
-
+    getUsers(callback) {
+      let curUsers = null
+      this.$ajax({
+        method: 'get',
+        url: '/api/test-demo'
+      }).then(function (res) {
+        curUsers = res.data.result
+        callback(curUsers)
+      }).catch(function (err) {
+        console.info(err)
+      })
     }
+
   }
+}
 </script>
 
 <style scoped>
-  .clk{
-    color: #f30026;
-  }
+.clk {
+  color: #f30026;
+}
 </style>
