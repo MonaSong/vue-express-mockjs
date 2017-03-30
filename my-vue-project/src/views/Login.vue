@@ -60,13 +60,15 @@ export default {
         left: 0;
         right: 0;
         bottom: 0;
+        background-image: url('../../static/images/login-bg.jpg');
+        background-size: cover;
         background-color: @bg-color;
       }
       .login-box{
          width:500px;
          height: 300px;
-         margin: 100px auto auto auto;
-         background-color: @white;
+         margin: 200px auto auto auto;
+         background-color: rgba(255,255,255,.4);
          input{
           height: 40px;
           background-color: @white;

@@ -7,9 +7,9 @@
         <div class="sidebar-container">
           <ul>
             <li :class="{active:(onRoutes === 'readme')}"><span><router-link to="/readme">前言</router-link></span></li>
-            <li :class="{active:(onRoutes === 'about')}"><span><router-link to="/readme/about">关于</router-link></span></li>
-            <li :class="{active:(onRoutes === 'account')}"><span><router-link to="/readme/account">账户</router-link></span></li>
-            <li :class="{active:(onRoutes === 'animate')}"><router-link to="/readme/animate">动画</router-link></li>
+            <li :class="{active:(onRoutes === 'about')}"><span><router-link to="/readme/about">前端技术清单</router-link></span></li>
+            <li :class="{active:(onRoutes === 'account')}"><span><router-link to="/readme/account">mock服务</router-link></span></li>
+            <li :class="{active:(onRoutes === 'animate')}"><router-link to="/readme/animate">组件</router-link></li>
           </ul>
         </div>
     </div>

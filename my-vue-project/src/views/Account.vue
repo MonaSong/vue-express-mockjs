@@ -7,9 +7,7 @@
         </div>
         <div class="panel-body">
           <div>
-            <h4 v-text="msg"
-                v-on:click="tips"
-                class="text-left"></h4>
+            <h4 v-text="msg" v-on:click="tips" class="text-left"></h4>
             <table class="table">
               <thead>
                 <tr>
@@ -53,14 +51,13 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      msg: '固定数据',
-      toggle: 'a',
-      age: '你好',
-      list: [
-        {
+  export default {
+    data () {
+      return {
+        msg: '固定数据',
+        toggle: 'a',
+        age: '你好',
+        list: [{
           name: 'lucy',
           age: '23',
           sex: '女'
@@ -75,58 +72,59 @@ export default {
           age: '25',
           sex: '女'
         }
-      ],
-      user: null,
-      users: null
-    }
-  },
-  created: function () {
-    let seft = this
-    this.getUsers(function (data) {
-      seft.users = data
-    })
-  },
-  methods: {
-    tips() {
-      let self = this
-      self.msg = '你点了我一下'
-      setTimeout(function () {
-        self.msg = '这里是个人账户信息'
-      }, 1000)
+        ],
+        user: null,
+        users: null
+      }
     },
-    getUserInfo() {
-      //  let contextPath = 'http://localhost:8090'
-      this.$ajax({
-        method: 'get',
-        url: '/api/user',
-        params: {
-          uid: 233
-        }
-      }).then(function (res) {
-        console.info(res)
-      }).catch(function (err) {
-        console.info(err)
+    created: function () {
+      let seft = this
+      this.getUsers(function (data) {
+        seft.users = data
       })
     },
-    getUsers(callback) {
-      let curUsers = null
-      this.$ajax({
-        method: 'get',
-        url: '/api/test-demo'
-      }).then(function (res) {
-        curUsers = res.data.result
-        callback(curUsers)
-      }).catch(function (err) {
-        console.info(err)
-      })
-    }
+    methods: {
+      tips () {
+        let self = this
+        self.msg = '你点了我一下'
+        setTimeout(function () {
+          self.msg = '这里是个人账户信息'
+        }, 1000)
+      },
+      getUserInfo () {
+        //  let contextPath = 'http://localhost:8090'
+        this.$ajax({
+          method: 'get',
+          url: '/api/user',
+          params: {
+            uid: 233
+          }
+        }).then(function (res) {
+          console.info(res)
+        }).catch(function (err) {
+          console.info(err)
+        })
+      },
+      getUsers (callback) {
+        let curUsers = null
+        this.$ajax({
+          method: 'get',
+          url: '/api/test-demo'
+        }).then(function (res) {
+          curUsers = res.data.result
+          callback(curUsers)
+        }).catch(function (err) {
+          console.info(err)
+        })
+      }
 
+    }
   }
-}
+
 </script>
 
 <style scoped>
-.clk {
-  color: #f30026;
-}
+  .clk {
+    color: #f30026;
+  }
 </style>
